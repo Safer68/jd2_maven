@@ -1,0 +1,40 @@
+CREATE DATABASE People;
+CREATE TABLE People.Person
+(
+    id             int(100),
+    age            int(100),
+    salary         DEC(3),
+    passport       CHAR(10),
+    address        VARCHAR(200),
+    dateOfBirthday DATE,
+    dateTimeCreate DATETIME,
+    timeToLunch    TIMESTAMP,
+    letter         TEXT
+);
+ALTER TABLE People.person
+    add primary key (id);
+
+alter table People.person
+    modify id int not null;
+
+alter table People.person
+    modify id int auto_increment;
+
+create unique index person_id_uindex
+    on People.person (id);
+insert into People.person (age, salary, passport, address, dateOfBirthday, dateTimeCreate, timeToLunch, letter)
+VALUES (19, 13, 'KH684899', 'г.Минск ул.Карвата 4', '2019-04-27', '2019-04-27 10:16', '2019-04-27 10', 'huiyuoioyoyoy');
+
+insert into People.person (age, salary, passport, address, dateOfBirthday, dateTimeCreate, timeToLunch, letter)
+VALUES (23, 12, 'ВА566943', 'г.Лида ул.Космонавтов 45', '2021-08-14', '2021-08-14 13:46', '2021-08-14 13', 'huiyuoioyoyoy');
+
+insert into People.person (age, salary, passport, address, dateOfBirthday, dateTimeCreate, timeToLunch, letter)
+VALUES (25, 13, 'ДЛ568923', 'г.Минск ул.Лазо 17', '2002-03-16', '2002-03-16 08:23', '2002-03-16 08', 'huiyuoioyoyoy');
+
+insert into People.person (age, salary, passport, address, dateOfBirthday, dateTimeCreate, timeToLunch, letter)
+VALUES (27, 10, 'ЖВ568942', 'г.Брест ул.Первомайская 69', '2017-01-25', '2017-01-25 15:03', '2017-01-25 15', 'huiyuoioyoyoy');
+
+insert into People.person (age, salary, passport, address, dateOfBirthday, dateTimeCreate, timeToLunch, letter)
+VALUES (19, 11, 'КН789456', 'г.Минск ул.Варвашени 9', '2017-03-23', '2017-03-23 12:36', '2017-03-23 12', 'huiyuoioyoyoy');
+select * from People.person
+where People.Person.age>21 order by People.person.dateTimeCreate;
