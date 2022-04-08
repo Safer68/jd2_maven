@@ -6,7 +6,11 @@
 
     <groupId>jd2</groupId>
     <artifactId>jd2_maven</artifactId>
+    <packaging>pom</packaging>
     <version>1</version>
+    <modules>
+        <module>Lesson10_CarDAO</module>
+    </modules>
     <name>Lesson3</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
